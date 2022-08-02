@@ -19,7 +19,7 @@ html {
 :root {
   --primary-color: #6edae6;
   --white-color: #fff;
-  --black-clor: #000;
+  --black-color: #000;
 }
 
 /* End of Common Styles */
@@ -50,3 +50,21 @@ html {
 }
 
 /* End of Logo */
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 3rem;
+  right: 10%;
+}
+
+.navbar-link {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 0 3rem;
+  color: var(--black-color);
+  transition: transform 0.5s;
+}
+.navbar-link:hover {
+  transform: scale(1.5);
+}
