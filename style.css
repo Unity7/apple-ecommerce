@@ -164,3 +164,72 @@ html {
 .slideshow div.change {
   opacity: 1;
 }
+
+/* Cube */
+
+.cube-wrapper {
+  perspective: 100rem;
+}
+
+.cube {
+  width: 30rem;
+  height: 55rem;
+  background-color: red;
+  transform-style: preserve-3d;
+  transform: rotateX(91deg);
+}
+
+.front-side,
+.back-side {
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  background-color: #fee;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.front-side {
+  transform: translateZ(5rem);
+  padding: 2.5rem;
+}
+
+.front-side::before,
+.front-side::after {
+  content: "";
+  width: 100%;
+  height: 10rem;
+  background-color: #fee;
+  position: absolute;
+}
+
+.front-side::before {
+  top: 0;
+  left: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+
+.front-side::after {
+  bottom: 0;
+  right: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+}
+
+.front-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.back-side {
+  transform: translateZ(-5rem);
+}
+
+.back-side i {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: 0.1rem 0.1rem 0.2rem #aaa, -0.1rem -0.1rem 0.2rem #aaa;
+  transform: rotateY(180deg);
+}
+/* End of Cube */
