@@ -1,3 +1,14 @@
+//Cube
+
+const cube = document.querySelector(".cube");
+let cubeY = 0;
+const playPause = () => {
+  setInterval(() => {
+    cube.style.transform = `rotateY(${cubeY++}deg)`;
+  }, 100);
+};
+
+playPause();
 //slideshow
 
 const slideshowDivs = () => {
