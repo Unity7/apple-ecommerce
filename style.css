@@ -385,7 +385,6 @@ html {
   object-fit: contain;
   position: absolute;
   transition: opacity 3s;
-  padding-bottom: 5rem;
 }
 
 .iphone-img-2 {
