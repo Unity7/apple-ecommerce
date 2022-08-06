@@ -88,3 +88,26 @@ const slideshow = () => {
 };
 
 slideshow();
+
+// End of Slideshow
+
+//Section 3
+const section3Content = document.querySelector(".section-3-content");
+
+window.addEventListener("scroll", () => {
+  //Check where in the page the user is at by comparing the innerHeight of the current window to the top of the window
+  if (
+    //Check how far from the top user has scrolled plus the height of the view window
+    //pageYOffset checks the distance scrolled from the top of the screen
+    //innerHeight height of the window's layout viewport
+    window.pageYOffset + window.innerHeight >=
+    //If distance from top of screen is greater or equal to the sum of the distance from Section3Content and the view window heigh then the user has scrolled into section 3 view
+    //offsetTop returns the distance of the outer border of the current element relative to the inner border of the top of the offset Parent
+    //offsetHeight returns the height of an element
+    section3Content.offsetTop + section3Content.offsetHeight / 2
+  ) {
+    section3Content.classList.add("change");
+  }
+});
+
+//End of Section 3
