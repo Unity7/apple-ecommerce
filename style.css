@@ -641,11 +641,16 @@ html {
   object-fit: contain;
 }
 
+.watch-bands {
+  transition: margin-right 1s;
+}
+
 /* End of Watch Bands */
 
 /* Watch Cases */
 .watch-cases {
   flex-direction: column;
+  transition: margin-top 1s;
 }
 .watch-case-img {
   width: 35rem;
@@ -657,6 +662,12 @@ html {
 /* End of Section 4 Watches */
 
 /* Watch Controls */
+
+.hideControl {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .watch-control {
   position: absolute;
   width: 4rem;
