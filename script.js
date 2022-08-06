@@ -1,3 +1,15 @@
+//Common JS
+//stop link elements from scrolling to the top of the page
+document
+  .querySelectorAll(".watch-control, .controls a, .iphone-btn")
+  .forEach((control) => {
+    control.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  });
+
+//End of Common JS
+
 //Cube
 
 const cube = document.querySelector(".cube");
@@ -111,3 +123,71 @@ window.addEventListener("scroll", () => {
 });
 
 //End of Section 3
+
+// Section 4
+const watchBands = document.querySelector(".watch-bands");
+const watchCases = document.querySelector(".watch-cases");
+
+const watchTopControl = document.querySelector(".watch-top-control");
+const watchBottomControl = document.querySelector(".watch-bottom-control");
+const watchRightControl = document.querySelector(".watch-right-control");
+const watchLeftControl = document.querySelector(".watch-left-control");
+
+let axisY = 0;
+let axisX = 0;
+
+//hide control when images are out of bounds
+const hideControl = () => {
+  //top control
+  if (axisY === -280) {
+    watchTopControl.classList.add("hideControl");
+  } else {
+    watchTopControl.classList.remove("hideControl");
+  }
+
+  //bottom control
+  if (axisY === 280) {
+    watchBottomControl.classList.add("hideControl");
+  } else {
+    watchBottomControl.classList.remove("hideControl");
+  }
+
+  //right control
+  if (axisX === 280) {
+    watchRightControl.classList.add("hideControl");
+  } else {
+    watchRightControl.classList.remove("hideControl");
+  }
+
+  //left control
+  if (axisX === -280) {
+    watchLeftControl.classList.add("hideControl");
+  } else {
+    watchLeftControl.classList.remove("hideControl");
+  }
+};
+
+//top control
+watchTopControl.addEventListener("click", () => {
+  watchCases.style.marginTop = `${(axisY -= 70)}rem`;
+  hideControl();
+});
+
+//bottom control
+watchBottomControl.addEventListener("click", () => {
+  watchCases.style.marginTop = `${(axisY += 70)}rem`;
+  hideControl();
+});
+//right control
+watchRightControl.addEventListener("click", () => {
+  watchBands.style.marginRight = `${(axisX += 70)}rem`;
+  hideControl();
+});
+
+//left control
+watchLeftControl.addEventListener("click", () => {
+  watchBands.style.marginRight = `${(axisX -= 70)}rem`;
+  hideControl();
+});
+
+// End of Section 4
